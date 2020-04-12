@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">How much do you know About the Universe</string>
+    <string name="universe_the_quiz">Are You Ready To Test Your Knowledge</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

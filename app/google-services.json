@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "12014540710",
+    "firebase_url": "https://universe-quiz-73c12.firebaseio.com",
+    "project_id": "universe-quiz-73c12",
+    "storage_bucket": "universe-quiz-73c12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12014540710:android:0bdea373cf826474c6e167",
+        "android_client_info": {
+          "package_name": "tech.gamedev.universequiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12014540710-i9ufi68bh100757mbh3r674rmqdsm17h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1QP9u8WMRuuF3DEbvulYlAwz6EuWip-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12014540710-i9ufi68bh100757mbh3r674rmqdsm17h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

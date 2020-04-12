@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/universe_bg"
+    tools:context=".ui.GameActivity">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:id="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/planet"/>
+    
+
+
+        <Button
+        android:id="@+id/play_btn"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/ready_btn_style"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@id/logo"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/coiny"
+        android:gravity="center"
+        android:text="PLAY"
+        android:clickable="false"
+        android:textColor="#5409DA"
+        android:textSize="40sp"
+        android:textStyle="bold|italic"
+
+        />
+
+
+</RelativeLayout>
