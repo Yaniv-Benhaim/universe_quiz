@@ -13,6 +13,7 @@
         android:layout_height="200dp"
         android:id="@+id/question_image"
         tools:src="@drawable/marsearth"
+        android:visibility="invisible"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
@@ -20,9 +21,17 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
+        android:background="@drawable/question_background_style"
+        android:text="The earth is how big exactly"
         android:id="@+id/question_text"
-        android:visibility="invisible"
+        android:layout_marginLeft="20dp"
+        android:padding="5dp"
+        android:layout_marginRight="20dp"
+        android:textStyle="bold"
+        android:textColor="#9C27B0"
+        android:textSize="26sp"
+        android:visibility="visible"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
@@ -43,8 +52,8 @@
             android:textColor="#9C27B0"
             android:text="A"
             android:layout_margin="8dp"
-            android:textSize="26sp"
-            android:background="@drawable/score_board_style"/>
+            android:textSize="22sp"
+            android:background="@drawable/question_background_style"/>
 
         <Button
             android:layout_width="match_parent"
@@ -54,8 +63,8 @@
             android:textColor="#9C27B0"
             android:text="B"
             android:layout_margin="8dp"
-            android:textSize="26sp"
-            android:background="@drawable/score_board_style"/>
+            android:textSize="22sp"
+            android:background="@drawable/question_background_style"/>
 
         <Button
             android:layout_width="match_parent"
@@ -65,8 +74,8 @@
             android:textColor="#9C27B0"
             android:text="C"
             android:layout_margin="8dp"
-            android:textSize="26sp"
-            android:background="@drawable/score_board_style"/>
+            android:textSize="22sp"
+            android:background="@drawable/question_background_style"/>
 
         <Button
             android:layout_width="match_parent"
@@ -76,8 +85,8 @@
             android:textColor="#9C27B0"
             android:text="D"
             android:layout_margin="8dp"
-            android:textSize="26sp"
-            android:background="@drawable/score_board_style"/>
+            android:textSize="22sp"
+            android:background="@drawable/question_background_style"/>
 
     </LinearLayout>
 
@@ -85,7 +94,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="30dp"
         android:paddingTop="20dp">
 
 
@@ -98,10 +106,11 @@
           android:orientation="vertical">
 
           <LinearLayout
-
+              android:id="@+id/score_wrap_layout"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:padding="5dp"
+              android:layout_margin="30dp"
               android:background="@drawable/score_board_style"
               android:orientation="horizontal"
               android:weightSum="2">

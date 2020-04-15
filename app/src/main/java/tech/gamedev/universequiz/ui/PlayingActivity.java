@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.provider.ContactsContract;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -21,8 +24,8 @@ import tech.gamedev.universequiz.R;
 
 public class PlayingActivity extends AppCompatActivity implements View.OnClickListener{
 
-    final static long INTERVAL = 10000;
-    final static long TIMEOUT = 10000;
+    final static long INTERVAL = 20000;
+    final static long TIMEOUT = 20000;
     int progressValue = 0;
 
     CountDownTimer countDownTimer;
@@ -31,10 +34,12 @@ public class PlayingActivity extends AppCompatActivity implements View.OnClickLi
 
 
 
+    Animation btnAnim;
     ProgressBar progressBar;
     ImageView question_image;
     Button btnA,btnB,btnC,btnD;
     TextView textScore,textQuestionNum,question_text;
+    LinearLayout score_wrap_layout;
 
 
     @Override
@@ -51,6 +56,7 @@ public class PlayingActivity extends AppCompatActivity implements View.OnClickLi
         question_image = findViewById(R.id.question_image);
 
         progressBar = findViewById(R.id.progress_bar);
+        score_wrap_layout = findViewById(R.id.score_wrap_layout);
 
         btnA = findViewById(R.id.btnAnswerA);
         btnB = findViewById(R.id.btnAnswerB);
@@ -62,6 +68,13 @@ public class PlayingActivity extends AppCompatActivity implements View.OnClickLi
         btnC.setOnClickListener(this);
         btnD.setOnClickListener(this);
 
+        setBtnAnim();
+
+    }
+
+    private void setBtnAnim() {
+        btnAnim = AnimationUtils.loadAnimation(this, R.anim.btn_scale_anim);
+        score_wrap_layout.startAnimation(btnAnim);
     }
 
     @Override
@@ -156,6 +169,6 @@ public class PlayingActivity extends AppCompatActivity implements View.OnClickLi
                 showQuestion(++index);
             }
         };
-        showQuestion(++index);
+        showQuestion(index);
     }
 }
