@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/universe_bg"
+    android:background="@drawable/spacebgg"
     tools:context=".ui.GameActivity">
 
     <ImageView
         android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:id="@+id/logo"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="25dp"
-        android:src="@drawable/planet"/>
+        android:src="@drawable/astronaut_logo"/>
     
 
 
@@ -31,7 +31,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/coiny"
         android:gravity="center"
-        android:text="PLAY"
+        android:text="START"
         android:clickable="false"
         android:textColor="#5409DA"
         android:textSize="40sp"

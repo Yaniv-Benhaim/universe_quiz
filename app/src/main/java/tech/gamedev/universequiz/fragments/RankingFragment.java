@@ -1,5 +1,7 @@
 package tech.gamedev.universequiz.fragments;
 
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -28,6 +30,7 @@ import tech.gamedev.universequiz.R;
 import tech.gamedev.universequiz.adapters.RankingViewHolder;
 import tech.gamedev.universequiz.model.QuestionScore;
 import tech.gamedev.universequiz.model.Ranking;
+import tech.gamedev.universequiz.ui.ScoreDetail;
 
 
 public class RankingFragment extends Fragment {
@@ -95,14 +98,17 @@ public class RankingFragment extends Fragment {
                 rankingTbl.orderByChild("score")
         ) {
             @Override
-            protected void populateViewHolder(RankingViewHolder rankingViewHolder, Ranking ranking, int i) {
-                rankingViewHolder.txt_name.setText(ranking.getUserName());
-                rankingViewHolder.txt_score.setText(String.valueOf(ranking.getScore()));
+            protected void populateViewHolder(RankingViewHolder rankingViewHolder, final Ranking model, int i) {
+                rankingViewHolder.txt_name.setText(model.getUserName());
+                rankingViewHolder.txt_score.setText(String.valueOf(model.getScore()));
 
                 rankingViewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-
+                        playClickSound();
+                        Intent intent = new Intent(getActivity(), ScoreDetail.class);
+                        intent.putExtra("viewUser",model.getUserName());
+                        startActivity(intent);
                     }
                 });
             }
@@ -153,5 +159,10 @@ public class RankingFragment extends Fragment {
 
            }
        });
+    }
+    private void playClickSound(){
+        final MediaPlayer mp = MediaPlayer.create(getActivity(),R.raw.click_sound);
+        mp.start();
+
     }
 }

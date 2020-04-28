@@ -5,24 +5,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/universe_bg"
+    android:background="@drawable/spacebgg"
     tools:context=".ui.PlayingActivity">
+    
+    <com.airbnb.lottie.LottieAnimationView
+    android:id="@+id/check_mark"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="invisible"
+    android:layout_marginTop="200dp"
+    android:elevation="7dp"
+    app:lottie_rawRes="@raw/green_check_mark_lottie"
+    app:lottie_autoPlay="true"
+    app:lottie_loop="true"
 
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:id="@+id/question_image"
-        tools:src="@drawable/marsearth"
+    />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/wrong_mark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_marginTop="200dp"
+        android:elevation="7dp"
+        app:lottie_rawRes="@raw/lottie_error"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/image_cardView"
+        android:layout_width="wrap_content"
+        app:cardCornerRadius="10dp"
         android:visibility="invisible"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:gravity="center"
         android:layout_marginTop="25dp"
-        android:gravity="center"/>
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/question_image"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"/>
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@drawable/question_background_style"
+        android:background="@drawable/score_board_style"
         android:text="The earth is how big exactly"
         android:id="@+id/question_text"
         android:layout_marginLeft="20dp"
@@ -40,8 +75,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/question_image"
-        android:layout_marginTop="20dp"
+        android:layout_below="@id/question_text"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:id="@+id/answer_group">
         <Button
@@ -53,7 +88,7 @@
             android:text="A"
             android:layout_margin="8dp"
             android:textSize="22sp"
-            android:background="@drawable/question_background_style"/>
+            android:background="@drawable/score_board_style"/>
 
         <Button
             android:layout_width="match_parent"
@@ -64,7 +99,7 @@
             android:text="B"
             android:layout_margin="8dp"
             android:textSize="22sp"
-            android:background="@drawable/question_background_style"/>
+            android:background="@drawable/score_board_style"/>
 
         <Button
             android:layout_width="match_parent"
@@ -75,7 +110,7 @@
             android:text="C"
             android:layout_margin="8dp"
             android:textSize="22sp"
-            android:background="@drawable/question_background_style"/>
+            android:background="@drawable/score_board_style"/>
 
         <Button
             android:layout_width="match_parent"
@@ -86,7 +121,7 @@
             android:text="D"
             android:layout_margin="8dp"
             android:textSize="22sp"
-            android:background="@drawable/question_background_style"/>
+            android:background="@drawable/score_board_style"/>
 
     </LinearLayout>
 

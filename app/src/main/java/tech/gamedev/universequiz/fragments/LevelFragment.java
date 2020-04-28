@@ -1,12 +1,12 @@
 package tech.gamedev.universequiz.fragments;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Lifecycle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -27,7 +26,6 @@ import tech.gamedev.universequiz.R;
 import tech.gamedev.universequiz.adapters.LevelViewHolder;
 import tech.gamedev.universequiz.model.Level;
 import tech.gamedev.universequiz.ui.GameActivity;
-import tech.gamedev.universequiz.ui.MainActivity;
 
 
 public class LevelFragment extends Fragment {
@@ -85,9 +83,10 @@ public class LevelFragment extends Fragment {
                 levelViewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(getActivity(), "WORKINg", Toast.LENGTH_SHORT).show();
+                        playClickSound();
                         Intent intent = new Intent(getActivity(), GameActivity.class);
                         Common.levelId = adapter.getRef(position).getKey();
+                        Common.levelName = level.getName();
                         startActivity(intent);
 
 
@@ -97,5 +96,11 @@ public class LevelFragment extends Fragment {
         };
         adapter.notifyDataSetChanged();
         levelsRecyclerView.setAdapter(adapter);
+    }
+
+    private void playClickSound(){
+        final MediaPlayer mp = MediaPlayer.create(getActivity(),R.raw.click_sound);
+        mp.start();
+
     }
 }
